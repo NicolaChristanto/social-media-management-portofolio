@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nicola Christanto - Social Media Manager</title>
+    <title>Nicola Christanto - Social Media Management</title>
     <style>
-         .job-photos {
-  margin-top: 20px;
-}
+        .job-photos {
+            margin-top: 20px;
+        }
 
-.photo-gallery {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
-  margin-top: 10px;
-}
+        .photo-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 10px;
+        }
         /* Global Styles */
         * {
             margin: 0;
@@ -60,6 +60,13 @@
             font-size: 60px;
             color: white;
             font-weight: bold;
+            overflow: hidden; /* Ensure image fits within the circle */
+        }
+        .profile-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Cover the area, crop if necessary */
+            border-radius: 50%; /* Make sure the image itself is also circular */
         }
         .name {
             font-size: 2.5em;
@@ -227,6 +234,17 @@
             font-size: 2.5em;
             margin-bottom: 15px;
         }
+        /* New style for the links inside contact items */
+        .contact-item a {
+            color: inherit; /* Inherit text color from parent */
+            text-decoration: none; /* Remove default underline */
+            display: block; /* Make the entire item clickable */
+            /* Add padding or other styles if needed to make the click target larger */
+        }
+        .contact-item a:hover {
+            text-decoration: underline; /* Add underline on hover for visual feedback */
+        }
+
         .cta-button {
             display: inline-block;
             background: linear-gradient(45deg, #ff6b6b, #ee5a24);
@@ -363,6 +381,38 @@
             transform: scale(1.03);
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
         }
+
+        /* New styles for the video showcase section */
+        .video-showcase-section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            text-align: center; /* Center the video title and description */
+        }
+
+        .responsive-video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio (height / width * 100) */
+            height: 0;
+            overflow: hidden;
+            border-radius: 15px;
+            margin: 20px auto; /* Center the video container */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .responsive-video-container video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+            object-fit: contain; /* Ensures the whole video is visible, scales down if needed */
+        }
     </style>
 </head>
 <body>
@@ -370,8 +420,9 @@
         <!-- Header Section -->
         <div class="header">
             <div class="profile-img">
-         <img src="foto.jpg" alt="Foto Nicola Christanto" style="width:150px; height:150px; border-radius:50%; object-fit:cover;">
-</div>
+                <!-- PLACE YOUR PROFILE PHOTO URL HERE -->
+                <img src="https://placehold.co/150x150/667eea/ffffff?text=NC" alt="Nicola Christanto Profile Photo">
+            </div>
             <h1 class="name">Nicola Christanto</h1>
             <p class="title">Social Media Management & Digital Marketing Specialist</p>
             <p style="color: #7f8c8d; font-size: 1.1em; margin: 10px 0;">Business Management Graduate | 3D Concrete Printing Supervisor</p>
@@ -447,7 +498,7 @@
             </div>
         </div>
 
-        <!-- Portfolio & Results Section (Moved Here) -->
+        <!-- Portfolio & Results Section -->
         <div class="section">
             <h2 class="section-title">Portfolio & Real Results</h2>
             <p style="text-align: center; font-size: 1.1em; color: #555; margin-bottom: 40px;">
@@ -481,14 +532,12 @@
                         <img src="persibig.jpeg" alt="Persib Bandung Project Image 1">
                     </div>
                     <div class="project-image">
-                        <!-- Placeholder for Persib Bandung Image 2 -->
                         <img src="persibtt.jpeg" alt="Persib Bandung Project Image 2">
                     </div>
-                    <!-- Add more images if needed -->
                 </div>
             </div>
 
-            <!-- Add more projects here following the same structure -->
+            <!-- E-commerce Brand X (Growth Case Study) -->
             <div class="portfolio-project">
                 <div class="project-details">
                     <h3 class="project-title">📈 E-commerce Brand X (Growth Case Study)</h3>
@@ -512,19 +561,37 @@
                 </div>
                 <div class="project-images">
                     <div class="project-image">
-                        <!-- Placeholder for E-commerce Image 1 -->
                         <img src="tt01.jpeg" alt="E-commerce Project Image 1">
                     </div>
                     <div class="project-image">
-                        <!-- Placeholder for E-commerce Image 2 -->
                         <img src="tt02.jpeg" alt="E-commerce Project Image 2">
                     </div>
                 </div>
             </div>
-            <!-- End of additional projects -->
-
         </div>
-        <!-- End Portfolio & Results Section -->
+
+        <!-- Video Showcase Section (NEW) -->
+        <div class="section video-showcase-section">
+            <h2 class="section-title">Video Showcase</h2>
+            <p style="font-size: 1.1em; color: #555; margin-bottom: 20px;">
+                Lihat cuplikan video pekerjaan atau portofolio Anda di sini.
+            </p>
+            <div class="responsive-video-container">
+                <!-- Ganti URL ini dengan URL 'Raw' video Anda dari GitHub -->
+                <!-- Contoh: https://raw.githubusercontent.com/USERNAME/REPO_NAME/main/path/to/your/video.mp4 -->
+                <video controls>
+                    <source src="URL_RAW_VIDEO_ANDA.mp4" type="video/mp4">
+                    <!-- Tambahkan <source> untuk format lain jika ada, seperti Ogg atau WebM -->
+                    <!-- <source src="URL_RAW_VIDEO_ANDA.webm" type="video/webm"> -->
+                    Browser Anda tidak mendukung tag video.
+                </video>
+            </div>
+            <p style="font-size: 0.9em; color: #7f8c8d; margin-top: 15px;">
+                *Pastikan video yang diunggah ke GitHub berukuran kecil untuk performa web terbaik.
+                Untuk video berukuran besar, disarankan menggunakan YouTube atau Vimeo.
+            </p>
+        </div>
+        <!-- End Video Showcase Section -->
 
         <!-- Services Section -->
         <div class="section">
@@ -553,6 +620,13 @@
                     <div class="service-title">Multi-Platform Management</div>
                     <p>Seamless management across TikTok, Instagram, Facebook, and other social platforms.</p>
                 </div>
+
+                <!-- New Service Card: Business Consulting -->
+                <div class="service-card">
+                    <div class="service-icon">💡</div> <!-- Icon for business/ideas -->
+                    <div class="service-title">Business Consulting</div>
+                    <p>Providing strategic guidance and innovative solutions for your business growth in the digital era.</p>
+                </div>
             </div>
         </div>
 
@@ -572,6 +646,7 @@
                 <span class="skill-tag">Brand Management</span>
                 <span class="skill-tag">Remote Team Leadership</span>
                 <span class="skill-tag">Project Management</span>
+                <span class="skill-tag">Business Consulting</span> <!-- Added new skill tag -->
             </div>
         </div>
 
@@ -584,9 +659,12 @@
 
             <div class="contact-info">
                 <div class="contact-item">
-                    <div class="contact-icon">📧</div>
-                    <h3>Email</h3>
-                    <p>nicola.christanto@email.com</p>
+                    <!-- Email Link -->
+                    <a href="mailto:nicolchristan@gmail.com">
+                        <div class="contact-icon">📧</div>
+                        <h3>Email</h3>
+                        <p>nicolchristan@gmail.com</p>
+                    </a>
                 </div>
 
                 <div class="contact-item">
@@ -596,14 +674,17 @@
                 </div>
 
                 <div class="contact-item">
-                    <div class="contact-icon">📱</div>
-                    <h3>WhatsApp</h3>
-                    <p>Available for consultation</p>
+                    <!-- WhatsApp Link -->
+                    <a href="https://wa.me/62895329813921" target="_blank" rel="noopener noreferrer">
+                        <div class="contact-icon">📱</div>
+                        <h3>WhatsApp</h3>
+                        <p>0895329813921</p>
+                    </a>
                 </div>
             </div>
 
             <div style="text-align: center;">
-                <a href="#" class="cta-button">Start Your Project Today</a>
+                <a href="https://wa.me/62895329813921" class="cta-button" target="_blank" rel="noopener noreferrer">Start Your Project Today</a>
             </div>
         </div>
     </div>
